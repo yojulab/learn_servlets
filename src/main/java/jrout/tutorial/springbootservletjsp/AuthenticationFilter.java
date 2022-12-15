@@ -17,8 +17,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 
-// @WebFilter("/AuthenticationFilter")
-@Component
+@WebFilter
+// @Component
 public class AuthenticationFilter implements Filter {
 
     private ServletContext context;
