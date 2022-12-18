@@ -1,12 +1,10 @@
 package jrout.tutorial.springbootservletjsp.controller;
 
-import jrout.tutorial.springbootservletjsp.daos.Commons;
-import jrout.tutorial.springbootservletjsp.daos.Surveys;
+import jrout.tutorial.springbootservletjsp.dao.Commons;
+import jrout.tutorial.springbootservletjsp.dao.SimpleTestWithDB;
 import jrout.tutorial.springbootservletjsp.model.Employee;
 import jrout.tutorial.springbootservletjsp.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,11 +16,8 @@ import java.io.IOException;
 import java.sql.Statement;
 import java.util.List;
 
-@WebServlet(urlPatterns = { "/pollController" })
+@WebServlet(urlPatterns = { "/pollControllerServlet" })
 public class PollControllerServlet extends HttpServlet {
-
-    @Autowired
-    private IEmployeeService employeeService;
 
     // We are tightly coupling these dependencies..
     @Override
@@ -30,12 +25,8 @@ public class PollControllerServlet extends HttpServlet {
         String fname = req.getParameter("fname");
         String empId = req.getParameter("empId");
 
-        
-        Commons commons = new Commons();
-        Statement statement = (Statement) commons.getStatement();
-        
-        Surveys surveys = new Surveys();
-        surveys.getSurvey(statement);     
+        SimpleTestWithDB simpleTestWithDB = new SimpleTestWithDB();
+        simpleTestWithDB.getDataInfors();
     }
 
     @Override
