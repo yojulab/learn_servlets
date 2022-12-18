@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Component;
 
-@WebFilter
+// @WebFilter
 // @Component
 public class AuthenticationFilter implements Filter {
 

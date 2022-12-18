@@ -5,12 +5,14 @@ import jrout.tutorial.springbootservletjsp.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
 
 @WebServlet(name = "Servlet", urlPatterns = { "/employeeController" })
@@ -25,6 +27,9 @@ public class EmployeeControllerServlet extends HttpServlet {
         String fname = req.getParameter("fname");
         String empId = req.getParameter("empId");
         List<Employee> employeeList = null;
+
+        ServletContext context = getServletContext();
+        URL resourceUrl = context.getResource("/");
 
         Employee employeeInfo = null;
         if (empId != null && empId.trim().length() > 0) {

@@ -1,6 +1,5 @@
 <%@ page import="jrout.tutorial.springbootservletjsp.model.Employee" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
@@ -26,6 +25,10 @@
 <body>
 
 <h2>HTML Table</h2>
+<%@ include file="/headers.jsp" %>
+<div>
+    Absolute Path is:<%= application.getResource("/headers.jsp").toString() %> 
+</div>
 <%
     Employee employee = (Employee)request.getAttribute("employee");
 %>
