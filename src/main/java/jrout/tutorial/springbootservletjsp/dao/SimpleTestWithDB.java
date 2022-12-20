@@ -18,8 +18,8 @@ public class SimpleTestWithDB {
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
                 // 설문 문항에 맞는 설문 답항 출력
-                System.out.print(resultSet.getInt("ORDERS") + ". ");
-                System.out.println(resultSet.getString("QUESTIONS"));
+                // System.out.print(resultSet.getInt("ORDERS") + ". ");
+                // System.out.println(resultSet.getString("QUESTIONS"));
                 String uid = resultSet.getString("QUESTIONS_UID");
                 // 설문자 답 받기
                 query = "SELECT example_list.EXAMPLE_UID, example_list.EXAMPLE, example_list.ORDERS " +
@@ -31,8 +31,8 @@ public class SimpleTestWithDB {
                 // 설문 답항 출력
                 ArrayList<String> example_list = new ArrayList<String>();
                 while (resultSetAnswer.next()) {
-                    System.out.print(resultSetAnswer.getInt("ORDERS") + ". ");
-                    System.out.println(resultSetAnswer.getString("EXAMPLE"));
+                    // System.out.print(resultSetAnswer.getInt("ORDERS") + ". ");
+                    // System.out.println(resultSetAnswer.getString("EXAMPLE"));
                     example_list.add(resultSetAnswer.getString("EXAMPLE_UID"));
                 }
                 resultSetAnswer.close();

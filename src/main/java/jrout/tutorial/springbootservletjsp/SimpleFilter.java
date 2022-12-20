@@ -11,10 +11,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 // @Component
 @WebFilter
+@Order(0)
 public class SimpleFilter implements Filter {
     @Override
     public void destroy() {

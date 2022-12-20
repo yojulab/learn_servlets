@@ -15,9 +15,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-// @WebFilter
+@WebFilter
+@Order(1)
 // @Component
 public class AuthenticationFilter implements Filter {
 
