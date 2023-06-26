@@ -25,7 +25,7 @@
 <body>
 
 <h2>HTML Table</h2>
-<%@ include file="/headers.jsp" %>
+<%@ include file="/headers.jsp"  flush="false" %>
 <div>
     Absolute Path is:<%= application.getResource("/headers.jsp").toString() %> 
 </div>
